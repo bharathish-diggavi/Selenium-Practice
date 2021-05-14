@@ -54,7 +54,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 content" style="text-align: center">
-               <div class="text-center"><button id="submit-button" type="submit">Send Message</button></div>
+               <div class="text-center"><button disabled onclick = "btnClicked()" id="submit-button" type="submit">Send Message</button></div>
+             </div>
+           </div>
+      </div>
+	  <div class="container">
+        <div class="row">
+          <div class="col-lg-12 content" style="text-align: center">
+               <div class="text-center"><button id="db-click" ondblclick="dbClickFunction()" type="submit">Double Click Me</button></div>
              </div>
            </div>
       </div>
@@ -88,8 +95,10 @@
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
   <script>
+  function dbClickFunction() {
+		alert("Hello");
+	}
       $(document).ready(function() {
-        $("#submit-button").attr("disabled", true);
         setTimeout(function(){
           $("#submit-button").attr("disabled", false);
         }, 3000);
@@ -97,6 +106,10 @@
       $("#submit-button").on('click',function(){
         alert('Click successful');
       })
+	  
+	  function btnClicked(){
+	  console.log("btn clicked..");
+	  }
   </script>
 </body>
 </html>
